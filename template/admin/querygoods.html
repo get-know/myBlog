@@ -1,0 +1,75 @@
+<?php
+    include_once 'header.php';
+
+    ?>
+
+
+<div class="con">
+    <?php
+    include_once 'slide.php';
+    ?>
+
+    <div class="conR">
+        <table class="table table-bordered">
+            <tr>
+                <!--<th>gid</th>-->
+                <th>名称</th>
+                <th>描述</th>
+                <th>作者</th>
+                <th>时间</th>
+                <!--<th>点击次数</th>-->
+                <th>图片</th>
+                <!--<th>内容</th>-->
+                <th>所属栏目</th>
+                <th>操作</th>
+            </tr>
+
+            <?php for($i=0;$i<count($result);$i++){ ?>
+            <tr>
+                <!--<td><?php echo $result[$i]['gid'] ?></td>-->
+                <td><?php echo $result[$i]['title'] ?></td>
+                <td><?php echo $result[$i]['des'] ?></td>
+                <td><?php echo $result[$i]['author'] ?></td>
+                <td><?php echo $result[$i]['times'] ?></td>
+                <!--<td><?php echo $result[$i]['count'] ?></td>-->
+                <td><img src="<?php echo $result[$i]['thumb'] ?>" alt="" style="width: 50px;"></td>
+                <!--<td><?php echo $result[$i]['content'] ?></td>-->
+                <!--<td><?php echo $result[$i]['cid'] ?></td>-->
+                <td><?php echo $result[$i]['cname'] ?></td>
+
+                <td>
+                    <a href="updatagoods.php?cid=<?php echo $result[$i]['cid'] ?>&gid=<?php echo $result[$i]['gid'] ?>" class="btn btn-info btn-sm">修改</a>
+                    <a href="##" class="btn btn-danger btn-sm">删除</a>
+                </td>
+
+            </tr>
+            <?php } ?>
+        </table>
+
+
+        
+        <nav aria-label="Page navigation" style="text-align: center">
+            <ul class="pagination">
+                <li>
+                    <a href="querygoods.php?pagenum=<?php echo $pagenum==1 ? 1 : $pagenum-1; ?>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <?php for($i=1;$i<=$size;$i++){ ?>
+                    <li class="<?php echo $pagenum==$i ? 'active' : '';?>">
+                        <a href="querygoods.php?pagenum=<?php echo $i; ?>"><?php echo $i; ?></a>
+                    </li>
+
+                <?php }?>
+                <li>
+                    <a href="querygoods.php?pagenum=<?php echo $pagenum == $size ? $size : $pagenum+1; ?>" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+    </div>
+</div>
+

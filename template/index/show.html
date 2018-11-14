@@ -1,0 +1,107 @@
+
+  <link rel="stylesheet" href="../static/css/index.css" />
+  <link rel="stylesheet" href="../static/css/huayanhuayu.css" />
+  <style>
+	  .word{
+		  padding:30px;
+	  }
+	.main .public-news{
+		padding-bottom:30px;
+	}
+  	.main .public-news .word .title{
+  		font-size: 32px;
+  		color:#444;
+  		text-align: left;
+  	}
+  	.main .public-news .word .msg{
+  		color:#a3afb7;
+  		font-size: 14px;
+  		margin:20px 0 50px 0;
+  		padding-bottom:30px;
+  		border-bottom:1px solid #eee;
+  	}
+  	.main .public-news .word > img{
+  		margin-top: 20px;
+  	}
+  	.main .public-news .word .desc{
+  		margin-top: 20px;
+  		line-height: 30px;
+  		font-size: 18px;
+  		font-weight: 400;
+  		color:#222;
+  	}
+  	.main .public-news .word .change{ 
+  		margin-top: 30px; 		
+  		border-top:1px solid #eee;
+  	}
+  	.main .public-news .word .change >a{
+  		display: inline-block;
+  		width: 142px;
+  		height: 42px;
+		padding:0 15px;
+		font-size: 12px;
+  		margin-top: 20px;
+  		text-align: center;
+  		line-height: 42px;
+  		border:1px solid #eee;
+  		border-radius:22px;
+  		cursor:pointer;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		box-sizing: border-box;
+  	}
+  	.main .public-news .word .change a.prev{
+  		float: left;
+  		color: #76838f;
+  		transition: .3s;
+  	}
+  .main .public-news .word .change a.next{
+	  float: right;
+	  color: #76838f;
+	  transition: .3s;
+  }
+.main .public-news .word .change a.prev:hover,
+.main .public-news .word .change a.next:hover{
+	color:#62a8ea;
+	border-color:#62a8ea;
+}
+
+.main .public-news .word .change a.no-prev{
+	float: left;
+	color: #ccd5db;
+	cursor:no-drop;
+}
+  .main .public-news .word .change a.no-next{
+	  float: right;
+	  color: #ccd5db;
+	  cursor:no-drop;
+  }
+  </style>
+ </head>
+ <body>
+
+	<!--main  start-->
+	<div class="main">		
+		<div class="public-news hyhy">
+			<div class="p-content clearfix">
+				<div class="title">
+					<span>&nbsp;</span>		
+				</div>		
+				<div class="word">
+						<p><?php echo $result['content']; ?></p>
+					<div class="change">
+						<!--<span class="prev">上一篇：爱莲说</span>-->
+						<!--<span class="next">下一篇：没有了</span>-->
+						<?php echo $prestr; ?>
+						<?php echo $nextstr; ?>
+					</div>
+				</div>
+				<?php include_once 'rslide.php';?>
+			</div>
+		</div>		
+	</div>
+	<!--main  end-->
+	
+
+

@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="../static/css/huayanhuayu.css"/>
+
+
+<div class="sidebar">
+    <form action="search.php" method="get">
+        <input type="text" placeholder="Search" name="keyword"/>
+    </form>
+    <a href="#"><i class="iconfont icon-sousuo1"></i></a><a href="#"><i class="iconfont icon-sousuo1"></i></a>
+    <div class="tips">
+        <h2>为您推荐</h2>
+        <div class="list">
+            <?php foreach($word as $val){?>
+                <a href="show.php?gid=<?php echo $val['gid']?>&cid=<?php echo $val['cid'];?>"><?php echo$val['title'];?></a>
+            <?php }?>
+        </div>
+    </div>
+    <a href='' class='all'>所有文章</a>
+</div>

@@ -1,0 +1,133 @@
+<link rel="stylesheet" href="../static/css/index.css" />
+<link rel="stylesheet" href="http://at.alicdn.com/t/font_800284_1idqhxy18d8.css" />
+<link rel="stylesheet" href="../static/css/swiper.min.css">
+<script src="../static/js/animate.js"></script>
+<script src="../static/js/index.js" defer></script>
+
+
+<!--main  start-->
+	<div class="main">
+		<div class="m-banner">
+			<?php foreach($banner as $val) {?>
+				<a href="show.php?cid=<?php echo $val['cid'];?>&gid=<?php echo $val['gid'];?>"><img src="<?php echo $val['thumb']?>" alt=""></a>
+			<?php }?>
+			<!--<img src="../static/img/banner1.jpg" alt="" />-->
+			<!--<img src="../static/img/banner2.jpg" alt="" />-->
+
+			<?php foreach($banner as $val) {?>
+				<p class="tips"><?php echo $val['title']?></p>
+			<?php }?>
+            <div class="change">
+				<?php foreach($banner as $val) {?>
+					<span></span>
+				<?php }?>
+            </div>
+			<div class="left-btn">
+				<i class="iconfont icon-xiangqian-copy"></i>
+			</div>
+			<div class="right-btn">
+				<i class="iconfont icon-xiangqian1"></i>
+			</div>
+		</div>
+		<div class="m-news">
+			<div class="title tit">
+				<span>文章推荐</span><a href="#"><em><i></i></em></a>
+				<p class="desc"> </p>
+			</div>
+			<div class="content swiper-container">
+				<ul class="clearfix swiper-wrapper">
+					<?php foreach($result as $val){?>
+					<li class="swiper-slide">
+						<img src="<?php echo $val['thumb']?>" alt="" />
+						<p class="title"><?php echo $val['title']?></p>
+						<p class="desc"><?php echo $val['des']?></p>
+						<a href="show.php?gid=<?php echo $val['gid']?>&cid=<?php echo $val['cid'];?>"><div class="details"><i class="iconfont icon-video"></i>查看文章</div>	</a>
+					</li>
+					<?php }?>
+
+
+				</ul>
+				<!-- Add Pagination -->
+				<!--<div class="swiper-pagination"></div>-->
+				<!-- Add Arrows -->
+				<div class="swiper-button-next"><i class="iconfont icon-xiangqian1"></i></div>
+				<div class="swiper-button-prev"><i class="iconfont icon-xiangqian-copy"></i></div>
+			</div>
+		</div>
+		<div class="m-news public-news">
+			<div class="p-content">
+				<div class="title tit">
+					<span>最新发布</span><a href="#"><em><i></i></em></a>
+				</div>		
+				<ul class="word clearfix">
+					<?php foreach($result as $val){?>
+						<li>
+							<img src="" imgsrc="<?php echo $val['thumb']?>" alt="" />
+							<a href="show.php?gid=<?php echo $val['gid']?>&cid=<?php echo $val['cid'];?>"><?php echo $val['title']?></a>
+							<p class="desc"><?php echo $val['des']?></p>
+							<p class="tips">
+								<span><?php echo $val['times']?></span>
+								<span><?php echo $val['author']?></span>
+								<i class="iconfont"></i>
+								<span><?php echo $val['count']?></span>
+							</p>
+						</li>
+					<?php }?>
+
+				</ul>
+			</div>
+		</div>
+		<!--<div class="m-msg m-news">-->
+			<!--<div class="m-content">-->
+				<!--<h1 class="title tit"><span>素馨花卉工作室</span></h1>-->
+				<!--<div class="service">-->
+					<!--<p class="title">郑州素馨花卉有限公司由优秀的花艺、花卉设计师王亚楠于2017年成立。</p>-->
+					<!--<p>经营范围：花卉、工艺品、饰品的销售；礼仪策划；花卉、苗木种植技术咨询。</p>-->
+					<!--<p>前期以鲜花、花束的包装及零售为主，逐渐过渡到花艺培训、家庭园艺等花香生活的指导，以及与花卉相关的文学创作。</p>-->
+					<!--<p>公司致力于将多彩花艺带入寻常人家，让对生活有着更高追求的人们享受温馨素雅的花香世界，力求将这种文化做到极致。</p>-->
+					<!--<p>公司地址：郑州市中牟县育才巷县直一初中家属院 1单元201室</p>-->
+					<!--<p>联系电话：0371-62180519  15890062947</p>-->
+					<!--<p>电子邮箱：office@suxinhuahui.com</p>-->
+				<!--</div>-->
+				<!--<div class="map">-->
+					<!--<img src="../static/img/staticimage.png"/>-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
+	</div>
+	<!--main  end-->
+
+<script src="../static/js/swiper.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        autoplay:true,
+        autoplay: {
+            disableOnInteraction: false,
+        },
+
+        loop:true,
+        slidesPerView: 3,
+//        centeredSlides: true,  //居中
+        spaceBetween: 30,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+    });
+    swiper.el.onmouseover = function(){
+        swiper.autoplay.stop();
+    }
+    swiper.el.onmouseout = function(){
+        swiper.autoplay.start();
+    }
+
+</script>
+
+
+
+

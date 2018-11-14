@@ -1,0 +1,39 @@
+<!doctype html><!--文档头信息-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="<?php echo $about['author']?>"><!--作者-->
+    <meta name="Keywords" content="<?php echo $about['keywords']?>"> <!--关键字-->
+    <meta name="Description" content="<?php echo $about['description']?>"><!--网页描述-->
+    <title>soul、</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_800284_9retwousb8.css">
+    <link rel="shortcut icon" href="http://www.suxinhuahui.com/favicon.ico" />
+    <link rel="stylesheet" href="../static/css/base.css" />
+    <link rel="stylesheet" href="../static/css/header.css" />
+
+</head>
+<body>
+<!--header start-->
+<div class="header">
+    <div class="h-content clearfix">
+        <div class="h-logo">
+            <a href="/cloth/index/index.php">soul个人博客</a>
+        </div>
+        <div class="h-nav">
+            <ul class="clearfix">
+                <li>
+                    <a href="/cloth/index/index.php" class="<?php if(!isset($_GET['cid'])){echo 'current';}?>">网站首页</a></li>
+                <?php for($i=0;$i<count($result);$i++){ ?>
+                <li>
+                    <a href="list.php?cid=<?php echo $result[$i]['cid']; ?>&pagenum=1"
+                       ><?php echo $result[$i]['title'] ?></a>
+                </li>
+                <?php }?>
+
+                <li><a href="http://www.alloyteam.com/nav/">前端导航</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--header end-->

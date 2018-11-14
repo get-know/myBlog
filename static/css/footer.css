@@ -1,0 +1,49 @@
+/*footer  start*/
+.footer{
+	width: 100%;
+	margin-top: 20px;
+	padding:10px 0;
+	background-color: #222;
+}
+.footer .f-content{
+	width: 1170px;
+	margin:0 auto;
+	color:#aaa;
+	font-size: 14px;
+	text-align: center;
+}
+.footer .f-content p.friendlink{
+	margin:15px 0;
+}
+.footer .f-content p.friendlink i{
+	margin:0 5px;
+	color:#62a8ea;
+	font-size: 22px;
+}
+.footer .f-content p.friendlink i.icon-weixin{
+	color:#83b944;
+}
+.footer .f-content p.guide a{
+	margin-right:10px;
+	color:#62a8ea;
+}
+.footer .f-content p.guide i{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url('../img/gonganbeian.png') no-repeat center;
+	vertical-align: middle;
+}
+.footer .f-content p.guide a:hover{
+	text-decoration:underline;
+}
+.footer .f-content p.guide img{
+	width: 20px;
+	height: 20px;
+}
+.footer .f-content p.contact{
+	margin:10px 0;	
+}
+
+
+/*footer  end*/

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台登录页面</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+
+<body>
+    <div class="login">
+        <div class="msg">后台登录</div>
+        <div class="info">
+            <!--novalidate 在form中不验证，直接提交   required 为必填   pattern  为验证条件-->
+            <form action="login.php" method="post" enctype="application/x-www-form-urlencoded" >
+                <input type="text" placeholder="邮箱/手机号码" required pattern="\w{3,10}" name="username">
+                <input type="password" placeholder="密码" required pattern="[0-9a-zA-Z]{5,10}" name="password">
+                <input type="checkbox" class="rememberu" >记住账号
+                <input type="checkbox" class="rememberp">记住密码
+                <!--表单控件重新修改信息  formaction=" "修改提交地址  formenctype=""修改头信息 formnovalidate  修改不在验证 -->
+                <button class="submit" type="submit">登录</button>
+                <div class="tips">忘记密码？</div>
+                <div class="toggle">没有账号？<a href="">立即注册</a></div>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

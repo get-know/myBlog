@@ -1,0 +1,125 @@
+
+<link href="https://cdn.bootcss.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        background: rgb(242,242,242);
+    }
+    .t-t {
+        background-color: #fff;
+        border-bottom: 1px solid rgb(200,200,200);
+    }
+    .container {
+        margin: 100px auto 0;
+        padding: 20px;
+        width: 1170px;
+
+    }
+    .logo li a {
+        color: #000;
+        line-height: 80px;
+    }
+    .row {
+        display: inline-block;
+        float: left;
+        width: 820px;
+    }
+    .footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+    /*sidebar start*/
+    .sidebar{
+        /*position: relative;*/
+        position: sticky;
+        top: 80px;
+        float: right;
+        width: 262px;
+        height: 355px;
+        padding:20px;
+        background-color: #fff;
+        box-sizing:border-box;
+    }
+    .sidebar input{
+        width: 222px;
+        height: 36px;
+        /*margin-bottom: 20px;*/
+        border-radius:18px;
+        line-height: 36px;
+        text-indent:15px;
+        border:1px solid #eee;
+        outline:none;
+    }
+    .sidebar #list{
+        width: 222px;
+    }
+    .sidebar #list > li{
+        margin-top: 8px;
+        padding:3px 0;
+        text-indent:10px;
+    }
+    .sidebar #list >li:hover{
+        background-color: #ccc;
+    }
+    .sidebar .icon-sousuo1{
+        position: absolute;
+        top: 28px;
+        right: 30px;
+        font-size: 24px;
+        color:#555;
+
+    }
+    .sidebar .tips{
+        padding:20px 0;
+        border-top:1px solid #eee;
+        border-bottom:1px solid #eee;
+    }
+    .sidebar .tips h2{
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 400;
+        color:#333;
+    }
+    .sidebar .tips .list{
+        width: 100%;
+        border:1px solid #eee;
+        border-radius:4px;
+    }
+    .sidebar .tips .list a{
+        display: block;
+        height: 35px;
+        line-height: 35px;
+        text-indent:16px;
+        border-bottom:1px solid #eee;
+    }
+    .sidebar .tips .list a:hover,
+    .sidebar a.all:hover{
+        color:#16b0dc;
+        text-decoration:underline;
+    }
+    .sidebar .tips .list a:last-child{
+        border:none;
+    }
+    .sidebar a.all{
+        display: block;
+        margin-top: 30px;
+        color:#333;
+    }
+    /*sidebar end*/
+</style>
+<div class="container">
+    <div class="row">
+        <ul class="list-group">
+            <?php foreach($result as $v){ ?>
+            <li class="list-group-item">
+                <h3><a href="show.php?cid=<?php echo $v['cid'];?>&&gid=<?php echo $v['gid'];?>"><?php echo $v['title'];?></a></h3>
+                <h5>商品描述：</h5>
+                <p><?php echo $v['des'];?></p>
+            </li>
+            <?php }?>
+        </ul>
+    </div>
+
+    <?php include_once 'rslide.php';?>
+
+</div>

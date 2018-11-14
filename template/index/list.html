@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="../static/css/huayanhuayu.css" />
+	
+	<!--main  start-->
+	<div class="main">		
+		<div class="m-news public-news hyhy">
+			<div class="p-content clearfix">
+				<div class="title">
+					<span><?php echo $result['title']?></span>
+				</div>		
+				<ul class="word clearfix">
+					<?php foreach($goods as $val){?>
+						<li>
+							<div class="pic">
+								<img src="<?php echo $val['thumb']?>" alt="" />
+							</div>
+							<a href="show.php?cid=<?php echo $cid?>&gid=<?php echo $val['gid']?>"><?php echo $val['title']?></a>
+							<p class="desc"><?php echo $val['des']?></p>
+							<p class="tips">
+								<span><?php echo substr($val['times'],0,10)?></span>
+								<span class="author"><?php echo $val['author']?></span>
+								<i class="iconfont icon-yanjing"></i>
+								<span><?php echo $val['count']?></span>
+							</p>
+						</li>
+
+					<?php }?>
+					<li>
+						<a href="list.php?cid=<?php echo $cid;?>&pagenum=<?php echo $pagenum==1 ? 1 : $pagenum-1; ?>">上一页</a>
+						<?php for($i=1;$i<=$size;$i++){ ?>
+						<a href="list.php?cid=<?php echo $cid;?>&pagenum=<?php echo $pagenum=$i; ?>" class="<?php echo $_GET['pagenum']==$i?'current':'';?>"><?php echo $i; ?></a>
+						<?php }?>
+
+						<a href="list.php?cid=<?php echo $cid ?>&pagenum=<?php echo $pagenum == $size ? $size : $pagenum+1; ?>" class="">下一页</a>
+					</li>
+				</ul>
+				<?php include_once 'rslide.php';?>
+
+			</div>
+		</div>		
+	</div>
+	<!--main  end-->
+
+

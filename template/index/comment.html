@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="../static/css/lyjy.css" />
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<!--<script src="../static/js/liuyan.js" defer></script>-->
+<script src="../static/js/comment.js"></script>
+	<!--main  start-->
+	<div class="main">		
+		<div class="public-news">
+			<div class="p-content clearfix">
+				<div class="title">
+					<span>留言建议</span>		
+				</div>		
+				<ul class="word clearfix">
+
+				</ul>
+				<div class="more"> 加载更多 <i class="iconfont icon-jiazai"></i></div>
+				<div class="sidebar">
+					<form action="comment.php" id="myform"></form>
+						<input type="text" placeholder="姓名" class="username" name="name" form="myform"/>
+						<input type="text"  placeholder="联系电话" class="phone" name="phone" form="myform"/>
+						<textarea cols="44	" rows="6" placeholder="您的建议" maxlength="100" name="content" form="myform"></textarea>
+						<div class="info">最多可输入100字，当前已输入 <span>0</span> 个字</div>
+						<input type="text" placeholder="验证码"/><div class="yanzhengma"></div>
+						<input class="submit" value="提交" type="submit"/>
+
+				</div>
+			</div>
+		</div>		
+	</div>
+	<!--main  end-->
+
+	
+ </body>
+</html>
